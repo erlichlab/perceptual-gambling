@@ -10,4 +10,4 @@ Written and maintained by Xiaoyue Zhu
 ### How to use the plotting functions
 1. Set working directory to where the repo is stored locally `setwd('xx/perceptual-gambling/')`
 2. Source `init.R`, make sure you have the relevant packages installed 
-3. Simply go to each `figure_x.R` and run the `makie_figure_x` function
+3. Simply go to each `figure_x.R` and run the `make_figure_x` function
