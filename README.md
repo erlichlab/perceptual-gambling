@@ -2,7 +2,7 @@
 Written and maintained by Xiaoyue Zhu
 
 ### What is included
-- `csv/` contains the animal behavioral data, and various csv files pre-computed for plotting 
+- `csv/` contains the animal behavioral data in `preprocessed_good_trials.csv`, and various csv files pre-computed for plotting 
 - `fits/` contains the stan fit objects using the mixture-BDT model
 - `plots/` is currently empty, any outputs of the plotting functions will be stored here
 - `figure_x` contains the plotting functions relevant for making the specific plots
