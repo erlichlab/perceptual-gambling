@@ -142,8 +142,10 @@ figure_behavior_difficulty = function(){
   # aggregate the sessions
   subj_delta_df = delta_df %>% group_by(subjid, difficulty) %>% summarise(delta_mean = mean(delta), delta_se = se(delta))
   subj_delta_df$difficulty = factor(subj_delta_df$difficulty, c('Easy', 'Medium', 'Hard')) 
-  m0 = lm('delta ~ difficulty', data = delta_df %>% filter(subjid == 2077))
-  m1 = lmer('delta ~ difficulty + (difficulty | subjid)', data = delta_df %>% filter(difficulty %in% c('Easy', 'Hard')))
+  #m0 = lm('delta ~ difficulty', data = delta_df %>% filter(subjid == 2077))
+  m1 = lmer('delta ~ difficulty + (difficulty | subjid)', data = delta_df)
+  m1 = lmer('delta ~ difficulty + (difficulty | subjid)', data = delta_df %>% filter(difficulty %in% c('Medium', 'Hard')))
+  #m1 = lmer('delta ~ difficulty + (difficulty | subjid)', data = delta_df %>% filter(difficulty %in% c('Easy', 'Hard')))
   p = ggplot(subj_delta_df, aes(x = difficulty, y = delta_mean*100, group = as.factor(subjid), ymin = delta_mean*100 - delta_se*100, ymax = delta_mean*100 + delta_se*100, color = difficulty)) + 
     theme_classic(BASE_SIZE) + 
     geom_line(position = position_dodge(0.3)) + 
