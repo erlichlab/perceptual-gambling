@@ -1,3 +1,6 @@
 *.pdf
 *.rds
+*.RData
+.DS_Store
+
 
